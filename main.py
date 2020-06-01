@@ -1,4 +1,4 @@
-import salesTax.py
+import salesTax
 
 print("Welcome to the money app!")
 print("Please select from the following options: ")
@@ -11,3 +11,4 @@ if choice == "1":
     price = input("What's the price of the item? ")
     print(salesTax.calculate_sales_tax(state, price))
     total = salesTax.calculate_sales_tax(state, price)
+

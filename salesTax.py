@@ -1,14 +1,31 @@
+taxRates = open("taxRates")
+dic = {}
+for line in taxRates:
+    line = line.strip().split()
+    abbrev_state = line[0]
+    rates = line[1]
+    dic[abbrev_state] = float(rates)
+
+
+
+
+
+
+
+
 def error_message():
+
     print("Something went wrong!")
 
 
 def calculate_sales_tax(chosenState, price):
-    #this function looks up the sales tax file and calculates the sales tax
-    #based on the price
-    salePrice = 0
+    if chosenState in dic:
+        salePrice = price + ((dic[chosenState]/100) * price)
+
     return salePrice
 
 
-#currently only USA, eventually, we will extend globally, eg:
-#Australia 10% GST
 
+
+
+print(dic)
